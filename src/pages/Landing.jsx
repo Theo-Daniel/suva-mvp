@@ -121,8 +121,13 @@ export default function Landing() {
               role="dialog"
               aria-modal="true"
               className="
-                fixed left-1/2 top-[37%] z-50 w-[580px] -translate-x-1/2 -translate-y-[100%]
-                rounded-2xl bg-[#181818] outline outline-1 outline-[#363636]"
+                fixed left-1/2 top-1/2 z-50
+                w-[92vw] max-w-[580px]
+                -translate-x-1/2 -translate-y-1/2
+                rounded-2xl bg-[#181818]
+                outline outline-1 outline-[#363636]
+                shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+              "
             >
               <div className="mt-2 flex items-start justify-between">
                 <img src={step1Img} alt="" className="ml-2 w-16" />
@@ -142,7 +147,7 @@ export default function Landing() {
                 </div>
               </div>
 
-              <div className="mb-5 mt-3 px-5 [font-family:'NeueHaasDisplay',sans-serif] text-left text-[15px] font-normal text-[#898989]">
+              <div className="mb-5 mt-3 px-4 sm:px-5 [font-family:'NeueHaasDisplay',sans-serif] text-left text-[15px] font-normal text-[#898989]">
                 Welcome to SUVA, your gateway to quantum-safe crypto security! Let’s create your wallet to get started.
                 Click the glowing ‘Create Wallet’ button below.
               </div>
