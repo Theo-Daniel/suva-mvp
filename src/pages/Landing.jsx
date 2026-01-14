@@ -122,9 +122,8 @@ export default function Landing() {
               aria-modal="true"
               className="
                 fixed left-1/2 top-1/2 z-50
-                w-[92%] max-w-[580px]
-                -translate-x-1/2 -translate-y-1/2
-                md:top-[37%] md:-translate-y-[100%]
+                w-[92vw] max-w-[580px]
+                -translate-x-1/2 -translate-y-[55%] md:-translate-y-[65%]
                 rounded-2xl bg-[#181818]
                 outline outline-1 outline-[#363636]
                 shadow-[0_10px_30px_rgba(0,0,0,0.35)]
