@@ -1,5 +1,7 @@
 // src/components/wallet/StepOverlay.jsx
 import React from "react";
+import defaultIcon from "../../assets/S1_img.png";
+import closeIcon from "../../assets/X_Mark.png";
 
 /**
  * Landing-style step overlay used on the wallet flow.
@@ -10,7 +12,7 @@ export default function StepOverlay({
   onClose,
   title,
   children,
-  iconSrc = "src/assets/S1_img.png",
+  iconSrc = defaultIcon,
 }) {
   if (!open) return null;
 
@@ -47,7 +49,7 @@ export default function StepOverlay({
             onClick={onClose}
             aria-label="Close"
           >
-            <img src="src/assets/X_Mark.png" alt="Close" />
+            <img src={closeIcon} alt="Close" />
           </button>
         </div>
 

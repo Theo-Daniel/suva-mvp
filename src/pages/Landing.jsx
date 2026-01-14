@@ -2,6 +2,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import whiteLogo from "../assets/WHITE.png";
+import step1Img from "../assets/S1_img.png";
+import xMark from "../assets/X_Mark.png";
+
+const posterUrl = new URL("../videos/poster.jpg", import.meta.url).href;
+const mobileVideoUrl = new URL("../videos/mobile-video.mp4", import.meta.url).href;
+const desktopVideoUrl = new URL("../videos/Landing-video.mp4", import.meta.url).href;
+
 export default function Landing() {
   const [showIntro, setShowIntro] = useState(true);
   const navigate = useNavigate();
@@ -19,24 +27,24 @@ export default function Landing() {
           loop
           playsInline
           preload="metadata"
-          poster="/videos/poster.jpg"
+          poster={posterUrl}
         >
           {/* mobile */}
           <source
-            src="/videos/mobile-video.mp4"
+            src={mobileVideoUrl}
             type="video/mp4"
             media="(max-width: 767px)"
           />
 
           {/* desktop */}
           <source
-            src="/videos/Landing-video.mp4"
+            src={desktopVideoUrl}
             type="video/mp4"
             media="(min-width: 768px)"
           />
 
           {/* fallback */}
-          <source src="/videos/Landing-video.mp4" type="video/mp4" />
+          <source src={desktopVideoUrl} type="video/mp4" />
         </video>
 
         {/* bottom blend */}
@@ -46,7 +54,7 @@ export default function Landing() {
       {/* Header */}
       <header className="relative z-10 w-full py-[7px] text-center bg-transparent">
         <img
-          src="src/assets/WHITE.png"
+          src={whiteLogo}
           alt="SUVA"
           className="mx-auto h-[27px] md:h-[32px] lg:h-[37px] object-contain"
         />
@@ -117,14 +125,14 @@ export default function Landing() {
                 rounded-2xl bg-[#181818] outline outline-1 outline-[#363636]"
             >
               <div className="mt-2 flex items-start justify-between">
-                <img src="src/assets/S1_img.png" alt="" className="ml-2 w-16" />
+                <img src={step1Img} alt="" className="ml-2 w-16" />
                 <button
                   type="button"
                   className="mr-2 w-8 cursor-pointer"
                   onClick={() => setShowIntro(false)}
                   aria-label="Close"
                 >
-                  <img src="src/assets/X_Mark.png" alt="" />
+                  <img src={xMark} alt="" />
                 </button>
               </div>
 
