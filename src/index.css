@@ -1,0 +1,129 @@
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'TerminaTest';
+  src: url('/src/assets/fonts/TerminaTest-Demi.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NeueHaasDisplay';
+  src: url('/src/assets/Fonts/NeueHaasDisplayRegular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TerminaTestCard';
+  src: url('/src/assets/fonts/TerminaTest-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NeueHaasDisplayMediu';
+  src: url('/src/assets/Fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Create wallet button */
+@property --glimmer-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.suva-button {
+  --ring-radius: 19px;
+  --ring-width: 2px;
+  --wedge: 20deg;
+  --soft: 10deg;
+  --gap: 180deg;
+
+  position: relative;
+  border-radius: var(--ring-radius);
+  isolation: isolate;
+}
+
+.suva-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--ring-radius);
+  padding: var(--ring-width);
+  background: rgba(255, 255, 255, 0.08); /* subtle grayish ring */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.button-glimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--ring-radius);
+  padding: var(--ring-width);
+
+  background:
+    conic-gradient(
+      from var(--glimmer-angle),
+      transparent 0deg,
+      #3A3A3A 0deg,
+      #E5E5E5 var(--wedge),
+      #3A3A3A calc(var(--wedge) + var(--soft)),
+      transparent calc(var(--wedge) + var(--soft)),
+      transparent var(--gap),
+      #3A3A3A var(--gap),
+      #E5E5E5 calc(var(--gap) + var(--wedge)),
+      #3A3A3A calc(var(--gap) + var(--wedge) + var(--soft)),
+      transparent calc(var(--gap) + var(--wedge) + var(--soft)),
+      transparent 360deg
+    );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  animation: glimmer-rotation 7s linear infinite;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+
+.button-glimmer:hover::before {
+  filter: brightness(1.4) drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
+}
+
+@keyframes glimmer-rotation {
+  to { --glimmer-angle: 360deg; }
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+body {
+  background: #0d0e0e;
+  color: #e7e7ea;
+  font-family: Inter, Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+@keyframes diceGlow {
+  0%   { filter: drop-shadow(0 0 3px #ffffff); }
+  25%  { filter: drop-shadow(0 0 4px #96c3ea); }
+  50%  { filter: drop-shadow(0 0 5px #de1cb4); }
+  75%  { filter: drop-shadow(0 0 4px #0044f1); }
+  100% { filter: drop-shadow(0 0 3px #ffffff); }
+}
