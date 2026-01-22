@@ -2,24 +2,24 @@
 
 @font-face {
   font-family: 'TerminaTest';
-  src: url('/src/assets/fonts/TerminaTest-Demi.otf') format('opentype');
+  src: url('./assets/Fonts/TerminaTest-Demi.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NeueHaasDisplay';
-  src: url('/src/assets/Fonts/NeueHaasDisplayRegular.ttf') format('truetype');
+  src: url('./assets/Fonts/NeueHaasDisplayRegular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'TerminaTestCard';
-  src: url('/src/assets/fonts/TerminaTest-Medium.otf') format('opentype');
+  src: url('./assets/Fonts/TerminaTest-Medium.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NeueHaasDisplayMediu';
-  src: url('/src/assets/Fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+  src: url('./assets/Fonts/NeueHaasDisplayMediu.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
