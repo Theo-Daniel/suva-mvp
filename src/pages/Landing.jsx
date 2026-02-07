@@ -1,7 +1,7 @@
 // src/pages/Landing.jsx
-import { useState } from "react";
+//import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useEffect, useState } from "react";
 import whiteLogo from "../assets/WHITE.png";
 import step1Img from "../assets/S1_img.png";
 import xMark from "../assets/X_Mark.png";
@@ -11,8 +11,16 @@ const mobileVideoUrl = new URL("../videos/mobile-video.mp4", import.meta.url).hr
 const desktopVideoUrl = new URL("../videos/Landing-video.mp4", import.meta.url).href;
 
 export default function Landing() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setShowIntro(true);
+    }, 3000); // ✅ 3 seconds
+
+    return () => clearTimeout(timerId); // ✅ cleanup if page changes quickly
+  }, []);
 
   const goToWallet = () => navigate("/wallet");
 
